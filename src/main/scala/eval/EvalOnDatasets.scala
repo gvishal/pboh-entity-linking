@@ -67,20 +67,20 @@ object EvalOnDatasets {
     val paramsBannerNew = " params a = " + fewWeights.a + ", f = " + fewWeights.f +  ", g = " + fewWeights.g + 
     	", h = " + fewWeights.h + ", s = " + fewWeights.s + ", b = " + fewWeights.b
 
-      evalOneDatasetInParallel(AIDA.loadDataset(true, allIndexesBox),  
-        fewWeights, w, banner + paramsBannerNew, " AIDA test A", fullPrint, max_product, sc)
+    //   evalOneDatasetInParallel(AIDA.loadDataset(true, allIndexesBox),  
+    //     fewWeights, w, banner + paramsBannerNew, " AIDA test A", fullPrint, max_product, sc)
     
-    val stats_AIDA_A = 
-      evalOneDatasetInParallel(AIDA.loadDataset(true, allIndexesBox),  
-        fewWeights, w, banner + paramsBannerNew, " AIDA test A", fullPrint, max_product, sc)
+    // val stats_AIDA_A = 
+    //   evalOneDatasetInParallel(AIDA.loadDataset(true, allIndexesBox),  
+    //     fewWeights, w, banner + paramsBannerNew, " AIDA test A", fullPrint, max_product, sc)
   
 //    val stats_Wiki = 
 //      evalOneDatasetInParallel(WikipediaDataset.loadDataset(allIndexesBox),  
 //        fewWeights, w, banner + paramsBannerNew, " Wikipedia VALIDATION ", fullPrint, max_product, sc)    	
         
     if (allSets) {
-      evalOneDatasetInParallel(AIDA.loadDataset(false, allIndexesBox),  
-          fewWeights, w, banner + paramsBannerNew, " AIDA test B", fullPrint, max_product, sc)
+      // evalOneDatasetInParallel(AIDA.loadDataset(false, allIndexesBox),  
+      //     fewWeights, w, banner + paramsBannerNew, " AIDA test B", fullPrint, max_product, sc)
       evalOneDatasetInParallel(AQUAINT_MSNBC_ACE04.loadDataset("MSNBC", allIndexesBox),  
           fewWeights, w, banner + paramsBannerNew, " MSNBC ", fullPrint, max_product, sc) 
       evalOneDatasetInParallel(AQUAINT_MSNBC_ACE04.loadDataset("AQUAINT", allIndexesBox),  

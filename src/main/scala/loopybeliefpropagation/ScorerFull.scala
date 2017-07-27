@@ -49,16 +49,16 @@ class RhoCache {
         val p_hat_w = (0.0 + uprob_w) / Z_w;
 
         var sum_p_tilda_w_e = 0.0;
-        if (allIndexesBox.wordEntityProbsIndex.entToTotal.containsKey(e)) {
-          sum_p_tilda_w_e = allIndexesBox.wordEntityProbsIndex.sum_unnorm_p_tilda_w_e.get(e);
+        if (allIndexesBox.wordEntityProbsIndex.entToTotal_containsKey(e)) {
+          sum_p_tilda_w_e = allIndexesBox.wordEntityProbsIndex.sum_unnorm_p_tilda_w_e_get(e);
           // Absolute discounting:
-          sum_p_tilda_w_e -= scorerWeights.xi * allIndexesBox.wordEntityProbsIndex.entToNumNonzeroWordProbs.get(e)
+          sum_p_tilda_w_e -= scorerWeights.xi * allIndexesBox.wordEntityProbsIndex.entToNumNonzeroWordProbs_get(e)
 
-          sum_p_tilda_w_e /= allIndexesBox.wordEntityProbsIndex.entToTotal.get(e)
+          sum_p_tilda_w_e /= allIndexesBox.wordEntityProbsIndex.entToTotal_get(e)
           
           assert(sum_p_tilda_w_e < 1.0 && sum_p_tilda_w_e >= 0.0, " Entity e = " + e + " sum_p_tilda_w_e = " + sum_p_tilda_w_e +
-            " sum tilda before substract = " + allIndexesBox.wordEntityProbsIndex.sum_unnorm_p_tilda_w_e.get(e) + 
-            " num nonzero word probs = " + allIndexesBox.wordEntityProbsIndex.entToNumNonzeroWordProbs.get(e))
+            " sum tilda before substract = " + allIndexesBox.wordEntityProbsIndex.sum_unnorm_p_tilda_w_e_get(e) + 
+            " num nonzero word probs = " + allIndexesBox.wordEntityProbsIndex.entToNumNonzeroWordProbs_get(e))
         }
         
         assert(scorerWeights.xi < 1.0)
@@ -72,10 +72,10 @@ class RhoCache {
         var p_w_e_over_p_hat_w = miu_e;
         var p_hat_w_e = 0.0
         if (allIndexesBox.wordEntityProbsIndex.containsWordEntityFreq(word, e) &&
-              allIndexesBox.wordEntityProbsIndex.entToTotal.containsKey(e)) {
+              allIndexesBox.wordEntityProbsIndex.entToTotal_containsKey(e)) {
           val uprob_w_e = allIndexesBox.wordEntityProbsIndex.getWordEntityFreq(word, e);
           assert(uprob_w_e > 0)
-          val Z_w_e = allIndexesBox.wordEntityProbsIndex.entToTotal.get(e);
+          val Z_w_e = allIndexesBox.wordEntityProbsIndex.entToTotal_get(e);
           assert(Z_w_e > 0)
           p_hat_w_e = (uprob_w_e.toDouble - scorerWeights.xi) / Z_w_e; // Absolute discounting
           p_w_e_over_p_hat_w = scorerWeights.delta_w_e * p_hat_w_e / p_hat_w + miu_e;

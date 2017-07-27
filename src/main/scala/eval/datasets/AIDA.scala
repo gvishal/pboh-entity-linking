@@ -10,7 +10,7 @@ import scala.collection.mutable.ArrayBuffer
 // Taken from https://www.mpi-inf.mpg.de/departments/databases-and-information-systems/research/yago-naga/aida/downloads/
 object AIDA {
   def loadDataset(testA : Boolean, allIndexesBox : AllIndexesBox) : Array[(String, Array[(String,Int, Array[Int])])] = {
-    val file =  "/media/hofmann-scratch/Octavian/entity_linking/marinah/AIDA/testa_testb_aggregate"
+    val file =  "/data/pboh-data/pboh_data/AIDA/testa_testb_aggregate"
      
     val sw = new StopWords
     

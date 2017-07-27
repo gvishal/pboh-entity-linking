@@ -15,7 +15,7 @@ class EntIDToNameIndex extends java.io.Serializable {
   def load(path : String) = {
 	System.err.println("Collecting disambiguation pages...")
 	val disambiguationPages = new TIntHashSet(200000)
-	val allDocsFile = "/media/hofmann-scratch/Octavian/entity_linking/marinah/wikipedia/disambiguation_pages"
+	val allDocsFile = "/data/pboh-data/pboh_data/disambiguation_pages"
 	val allDocsLines = scala.io.Source.fromFile(allDocsFile).getLines
 	allDocsLines.foreach(line => {
 	  val entID = line.split("\t")(0).toInt

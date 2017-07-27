@@ -14,8 +14,8 @@ object WikipediaDataset {
 
   def loadDataset(allIndexesBox : AllIndexesBox) : Array[(String, Array[(String,Int, Array[Int])])] = {
     // Wikipedia validation set
-    val mentionEntitiesFile =  "/media/hofmann-scratch/Octavian/entity_linking/marinah/wikipedia/anchorsListFromEachWikiPage.txt_val"
-    val contextFile = "/media/hofmann-scratch/other-data/Wikipedia/WikipediaPlainText/textFromAllWikipedia2014Feb.txt_one_doc_per_line_validation"
+    val mentionEntitiesFile =  "/data/pboh-data/pboh_data/anchorsListFromEachWikiPage.txt_val"
+    val contextFile = "/data/pboh-data/pboh_data/textFromAllWikipedia2014Feb.txt_one_doc_per_line_validation"
      
     val sw = new StopWords
     val wordFreqDict = allIndexesBox.wordFreqDict

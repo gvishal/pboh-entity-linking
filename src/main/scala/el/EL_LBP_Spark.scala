@@ -32,7 +32,7 @@ object EL_LBP_Spark  {
       
     } else if (program == "countNumDistinctPairs") {
      val wikipEntityCooccurrIndex = new EntityCooccurrenceIndex("wikipedia_index")
-     wikipEntityCooccurrIndex.computeNumDistinctPairs("/mnt/cw12/Octavian/el-lbp-marina/marinah/wikipedia/anchorsListFromEachWikiPage.txt_dev_index", true);     
+     wikipEntityCooccurrIndex.computeNumDistinctPairs("/data/pboh-data/pboh_data/anchorsListFromEachWikiPage.txt_dev_index", true);     
 
     } else if (program == "createCrosswikisIndex") {
       System.err.println(" Program : create Crosswikis Index")      

@@ -13,7 +13,7 @@ import java.io.File
 object GERBIL_MSNBC {
       
   def loadDataset(name : String, allIndexesBox : AllIndexesBox) : Array[(String, Array[(String,Int, Array[Int])])] = {
-    val baseDir =  "/media/hofmann-scratch/Octavian/entity_linking/marinah/gerbil_msnbc/"
+    val baseDir =  "/data/pboh-data/pboh_data/gerbil_msnbc/deos14_ualberta_experiments/msnbc"
     val rootDirMentions = baseDir + "Problems/"
     val rootDirContext = baseDir + "RawTextsSimpleChars_utf8/"
      

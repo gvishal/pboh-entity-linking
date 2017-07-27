@@ -4,11 +4,11 @@ package index;
 // Class that loads and keeps all indexes.
 class AllIndexesBox(whichIndexes : String)  extends java.io.Serializable {
 
-  val wordFreqDictPath = "/media/hofmann-scratch/other-data/Wikipedia/WikipediaPlainText/textFromAllWikipedia2014Feb.txt_word_frequencies"
+  val wordFreqDictPath = "/data/pboh-data/pboh_data/textFromAllWikipedia2014Feb.txt_word_frequencies"
   var wordFreqDict : WordFreqDict = null
 	
-  val wordEntityProbsIndexPath = "/media/hofmann-scratch/other-data/Wikipedia/WikipediaPlainText/textFromAllWikipedia2014Feb.txt_w_e_counts_window_50"
-  var  wordEntityProbsIndex : WordEntityProbsIndex = null
+  val wordEntityProbsIndexPath = "/data/pboh-data/pboh_data/textFromAllWikipedia2014Feb.txt_w_e_counts_window_50"
+  var wordEntityProbsIndex : WordEntityProbsIndex = null
 
   val wikipEntityCooccurrIndexPath = "anchorsListFromEachWikiPage.txt_dev_index"
   var wikipEntityCooccurrIndex : EntityCooccurrenceIndex = null
@@ -30,7 +30,7 @@ class AllIndexesBox(whichIndexes : String)  extends java.io.Serializable {
   var freebaseToWikiIDIndex : FreebaseWikipIndex = null
 
   // On DCO cluster: root = "/media/hofmann-scratch/Octavian/el-lbp-marina/marinah/wikipedia/"
-  val root = "/media/hofmann-scratch/Octavian/entity_linking/marinah/wikipedia/"
+  val root = "/data/pboh-data/pboh_data/"
 
 
   ////////////// Constructor ///////////////////
@@ -60,7 +60,9 @@ class AllIndexesBox(whichIndexes : String)  extends java.io.Serializable {
   }
 
   if (whichIndexes.contains("wordEntityProbs")) {
+    // most time consuming
     wordEntityProbsIndex = new WordEntityProbsIndex
+    // only load it once, subsequently reuse the old index.
     wordEntityProbsIndex.load(wordEntityProbsIndexPath, wordFreqDict);
   }
   

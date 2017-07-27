@@ -1,0 +1,410 @@
+Write mentions on a single line separated by commas:
+apple, macbook
+
+Write entities that co-occur in the same doc on a single line separated by commas, without the full URL (e.g. "Barack Obama"). Empty if none.
+
+
+ =============== Start Entity Linking pipeline ============
+
+Converged in 2 iterations for mentions size:2 num entities in graph = 18
+LBP Max-product spent time: 26 for mentions size:2
+
+ ------------ Results for Loopy ------------------------
+
+ File:
+Precision:0.5 Recall:0.5
+
+
+
+Ground truth size = 2
+Percent missing tkspans from index = 0.0
+Percent missing real ent from candidates index = 0.0
+
+Good solutions:
+Mention normalized = apple; e = Apple Inc.; Ground truth e =  Apple Inc.
+
+
+False positives (wrong assigned):
+Mention normalized = macbook; e = Apple Inc.; Ground truth e =  MacBook
+
+
+False negatives (not found):
+Mention normalized = macbook; e = MacBook; Ground truth e =  MacBook
+
+
+ ========= RESULTS Loopy ===========
+apple ----> Apple Inc. -- with score: 9.69707952138733
+macbook ----> Apple Inc. -- with score: 10.107976199282472
+ =============== Start Entity Linking pipeline ============
+
+ ========= RESULTS ARGMAX ===========
+apple ----> Apple Inc. -- with score: -0.547019475271078
+macbook ----> MacBook -- with score: -0.13612279737593275
+
+Write mentions on a single line separated by commas:
+british,digital,earnings,first group,fitness,forbes,fortune,kardashian
+
+Write entities that co-occur in the same doc on a single line separated by commas, without the full URL (e.g. "Barack Obama"). Empty if none.
+
+
+ =============== Start Entity Linking pipeline ============
+
+Converged in 3 iterations for mentions size:8 num entities in graph = 67
+LBP Max-product spent time: 67 for mentions size:8
+
+ ------------ Results for Loopy ------------------------
+
+ File:
+Precision:0.875 Recall:0.875
+
+
+
+Ground truth size = 8
+Percent missing tkspans from index = 0.0
+Percent missing real ent from candidates index = 0.0
+
+Good solutions:
+Mention normalized = forbes; e = Forbes; Ground truth e =  Forbes
+Mention normalized = earnings; e = Income; Ground truth e =  Income
+Mention normalized = fitness; e = Physical fitness; Ground truth e =  Physical fitness
+Mention normalized = first group; e = FirstGroup; Ground truth e =  FirstGroup
+Mention normalized = digital; e = Digital television; Ground truth e =  Digital television
+Mention normalized = british; e = United Kingdom; Ground truth e =  United Kingdom
+Mention normalized = fortune; e = Fortune (magazine); Ground truth e =  Fortune (magazine)
+
+
+False positives (wrong assigned):
+Mention normalized = kardashian; e = Kim Kardashian; Ground truth e =  Kardashian
+
+
+False negatives (not found):
+Mention normalized = kardashian; e = Kardashian; Ground truth e =  Kardashian
+
+
+ ========= RESULTS Loopy ===========
+forbes ----> Forbes -- with score: 1.9272276508206334
+earnings ----> Income -- with score: 0.966575733341354
+fitness ----> Physical fitness -- with score: 0.5983219758219882
+first group ----> FirstGroup -- with score: 0.0
+digital ----> Digital television -- with score: -1.5710180001965535
+british ----> United Kingdom -- with score: 0.7563329924006047
+fortune ----> Fortune (magazine) -- with score: 1.1125456511524587
+kardashian ----> Kim Kardashian -- with score: -0.36714684770822625
+ =============== Start Entity Linking pipeline ============
+
+ ========= RESULTS ARGMAX ===========
+forbes ----> Forbes -- with score: -0.11582722757293126
+earnings ----> Income -- with score: -0.14881628013831927
+fitness ----> Physical fitness -- with score: -0.49120583689633857
+first group ----> FirstGroup -- with score: 0.0
+digital ----> Digital television -- with score: -2.010347204006404
+kardashian ----> Kardashian -- with score: -0.6344984534784376
+fortune ----> Fortune (magazine) -- with score: -0.4197667337522033
+british ----> United Kingdom -- with score: -0.4761611214949576
+
+Write mentions on a single line separated by commas:
+401(k) , accounts , age , americans , answer , aren , average , baby boomers , basic , borrowing , borrowing money , certified financial planner , change , charge , clients , company , concepts , concern , credit card , credit card company , credit card debt , debt , difference , don , down , earned income , employee , employees , example , extra , fail , faq , fund , gen , gen xers , good cause , guarantee , guaranteed , habits , hauer , here , individual , interest , internal revenue service , invest , investment portfolio , investments , irish singles chart , irs , is , kathy , lets , lot , millennials , off track , off-track , order , people , person , questions , retire , retired , retirement , retirement account , retirement fund , retirement , roth ira , rutger hauer , save , savings , set , span , tax , taxed , taxes , time , track , traditional ira , turn , types , united states , views , work
+
+Write entities that co-occur in the same doc on a single line separated by commas, without the full URL (e.g. "Barack Obama"). Empty if none.
+
+
+Correcting name = credit card company -- with new name = credit card companies cands = 13897446
+Correcting name = retirement fund -- with new name = retirement housing cands = 9124466
+Correcting name = off-track -- with new name = off-track... cands = 16465265
+ =============== Start Entity Linking pipeline ============
+Correcting name = retirement fund -- with new name = retirement housing cands = 9124466
+Correcting name = credit card company -- with new name = credit card companies cands = 13897446
+Correcting name = off-track -- with new name = off-track... cands = 16465265
+
+Converged in 5 iterations for mentions size:83 num entities in graph = 640
+LBP Max-product spent time: 2461 for mentions size:83
+
+ ------------ Results for Loopy ------------------------
+
+ File:
+Precision:0.8795180722891566 Recall:0.8795180722891566
+
+
+
+Ground truth size = 83
+Percent missing tkspans from index = 0.0
+Percent missing real ent from candidates index = 0.0
+
+Good solutions:
+Mention normalized = faq; e = FAQ; Ground truth e =  FAQ
+Mention normalized = here; e = Tramadol; Ground truth e =  Tramadol
+Mention normalized = debt; e = Debt; Ground truth e =  Debt
+Mention normalized = invest; e = Investment; Ground truth e =  Investment
+Mention normalized = retirement; e = Retirement; Ground truth e =  Retirement
+Mention normalized = tax; e = Tax; Ground truth e =  Tax
+Mention normalized = retirement; e = Retirement; Ground truth e =  Retirement
+Mention normalized = taxes; e = Tax; Ground truth e =  Tax
+Mention normalized = lot; e = Lot (department); Ground truth e =  Lot (department)
+Mention normalized = down; e = Down GAA; Ground truth e =  Down GAA
+Mention normalized = irish singles chart; e = Irish Singles Chart; Ground truth e =  Irish Singles Chart
+Mention normalized = savings; e = Saving; Ground truth e =  Saving
+Mention normalized = irs; e = Internal Revenue Service; Ground truth e =  Internal Revenue Service
+Mention normalized = questions; e = Question; Ground truth e =  Question
+Mention normalized = taxed; e = Tax; Ground truth e =  Tax
+Mention normalized = answer; e = Answer; Ground truth e =  Answer
+Mention normalized = retirement account; e = Retirement; Ground truth e =  Retirement
+Mention normalized = span; e = Span (architecture); Ground truth e =  Span (architecture)
+Mention normalized = average; e = Average; Ground truth e =  Average
+Mention normalized = accounts; e = Account (accountancy); Ground truth e =  Account (accountancy)
+Mention normalized = guarantee; e = Surety; Ground truth e =  Surety
+Mention normalized = track; e = Track and field; Ground truth e =  Track and field
+Mention normalized = roth ira; e = Roth IRA; Ground truth e =  Roth IRA
+Mention normalized = credit card company; e = Credit CARD Act of 2009; Ground truth e =  Credit CARD Act of 2009
+Mention normalized = aren; e = Aren; Ground truth e =  Aren
+Mention normalized = basic; e = BASIC; Ground truth e =  BASIC
+Mention normalized = americans; e = United States; Ground truth e =  United States
+Mention normalized = borrowing money; e = Leverage (finance); Ground truth e =  Leverage (finance)
+Mention normalized = lets; e = Local exchange trading system; Ground truth e =  Local exchange trading system
+Mention normalized = internal revenue service; e = Internal Revenue Service; Ground truth e =  Internal Revenue Service
+Mention normalized = age; e = Ageing; Ground truth e =  Ageing
+Mention normalized = baby boomers; e = Baby boomers; Ground truth e =  Baby boomers
+Mention normalized = extra; e = Extra (acting); Ground truth e =  Extra (acting)
+Mention normalized = 401(k); e = 401(k); Ground truth e =  401(k)
+Mention normalized = concepts; e = Concept; Ground truth e =  Concept
+Mention normalized = charge; e = Electric charge; Ground truth e =  Electric charge
+Mention normalized = guaranteed; e = Guaranteed (Level 42 album); Ground truth e =  Guaranteed (Level 42 album)
+Mention normalized = credit card; e = Credit card; Ground truth e =  Credit card
+Mention normalized = interest; e = Interest; Ground truth e =  Interest
+Mention normalized = employee; e = Employment; Ground truth e =  Employment
+Mention normalized = fail; e = Box office bomb; Ground truth e =  Box office bomb
+Mention normalized = rutger hauer; e = Rutger Hauer; Ground truth e =  Rutger Hauer
+Mention normalized = certified financial planner; e = Certified Financial Planner; Ground truth e =  Certified Financial Planner
+Mention normalized = retire; e = Retirement; Ground truth e =  Retirement
+Mention normalized = united states; e = United States; Ground truth e =  United States
+Mention normalized = individual; e = Individual; Ground truth e =  Individual
+Mention normalized = set; e = Set (mathematics); Ground truth e =  Set (mathematics)
+Mention normalized = earned income; e = Wage; Ground truth e =  Wage
+Mention normalized = habits; e = Habit; Ground truth e =  Habit
+Mention normalized = views; e = View (SQL); Ground truth e =  View (SQL)
+Mention normalized = good cause; e = Product Red; Ground truth e =  Product Red
+Mention normalized = credit card debt; e = Credit card debt; Ground truth e =  Credit card debt
+Mention normalized = person; e = Person; Ground truth e =  Person
+Mention normalized = don; e = Donington Park; Ground truth e =  Donington Park
+Mention normalized = gen xers; e = Generation X; Ground truth e =  Generation X
+Mention normalized = investment portfolio; e = Portfolio (finance); Ground truth e =  Portfolio (finance)
+Mention normalized = retired; e = Retirement; Ground truth e =  Retirement
+Mention normalized = investments; e = Investment; Ground truth e =  Investment
+Mention normalized = hauer; e = Josef Matthias Hauer; Ground truth e =  Josef Matthias Hauer
+Mention normalized = off-track; e = Milka Duno; Ground truth e =  Milka Duno
+Mention normalized = millennials; e = Millennials; Ground truth e =  Millennials
+Mention normalized = order; e = Order (biology); Ground truth e =  Order (biology)
+Mention normalized = turn; e = Traversal Using Relays around NAT; Ground truth e =  Traversal Using Relays around NAT
+Mention normalized = concern; e = Concern (business); Ground truth e =  Concern (business)
+Mention normalized = gen; e = General officer; Ground truth e =  General officer
+Mention normalized = off track; e = Off-track betting; Ground truth e =  Off-track betting
+Mention normalized = retirement fund; e = Retirement home; Ground truth e =  Retirement home
+Mention normalized = company; e = Company; Ground truth e =  Company
+Mention normalized = kathy; e = Kathy Beale; Ground truth e =  Kathy Beale
+Mention normalized = employees; e = Employment; Ground truth e =  Employment
+Mention normalized = is; e = Fort Gay, West Virginia; Ground truth e =  Fort Gay, West Virginia
+Mention normalized = example; e = Example (musician); Ground truth e =  Example (musician)
+Mention normalized = time; e = Time (magazine); Ground truth e =  Time (magazine)
+
+
+False positives (wrong assigned):
+Mention normalized = borrowing; e = Debt; Ground truth e =  Loanword
+Mention normalized = traditional ira; e = Roth IRA; Ground truth e =  Traditional IRA
+Mention normalized = fund; e = Mutual fund; Ground truth e =  Fund accounting
+Mention normalized = types; e = Personal computer; Ground truth e =  Data type
+Mention normalized = people; e = People; Ground truth e =  People (magazine)
+Mention normalized = difference; e = Human Development Index; Ground truth e =  Difference feminism
+Mention normalized = save; e = Saving; Ground truth e =  Save (baseball)
+Mention normalized = clients; e = Consumer; Ground truth e =  Client (computing)
+Mention normalized = work; e = Employment; Ground truth e =  Copyright status of work by the U.S. government
+Mention normalized = change; e = Social change; Ground truth e =  Change (band)
+
+
+False negatives (not found):
+Mention normalized = save; e = Save (baseball); Ground truth e =  Save (baseball)
+Mention normalized = types; e = Data type; Ground truth e =  Data type
+Mention normalized = traditional ira; e = Traditional IRA; Ground truth e =  Traditional IRA
+Mention normalized = difference; e = Difference feminism; Ground truth e =  Difference feminism
+Mention normalized = borrowing; e = Loanword; Ground truth e =  Loanword
+Mention normalized = clients; e = Client (computing); Ground truth e =  Client (computing)
+Mention normalized = fund; e = Fund accounting; Ground truth e =  Fund accounting
+Mention normalized = change; e = Change (band); Ground truth e =  Change (band)
+Mention normalized = people; e = People (magazine); Ground truth e =  People (magazine)
+Mention normalized = work; e = Copyright status of work by the U.S. government; Ground truth e =  Copyright status of work by the U.S. government
+
+
+ ========= RESULTS Loopy ===========
+faq ----> FAQ -- with score: 0.5629315045614762
+here ----> Tramadol -- with score: -2.5301545493668947
+debt ----> Debt -- with score: 3.1126256324109316
+invest ----> Investment -- with score: 2.976001545047784
+retirement ----> Retirement -- with score: 3.3441570165929586
+tax ----> Tax -- with score: 2.9062872103993955
+retirement ----> Retirement -- with score: 3.3441570165929586
+taxes ----> Tax -- with score: 3.0915191824378168
+lot ----> Lot (department) -- with score: -1.032837201794924
+down ----> Down GAA -- with score: -1.3158364985042008
+irish singles chart ----> Irish Singles Chart -- with score: 0.28629159917902625
+savings ----> Saving -- with score: 2.653645194703494
+irs ----> Internal Revenue Service -- with score: 2.37393160195922
+questions ----> Question -- with score: -0.11003167647919165
+taxed ----> Tax -- with score: 3.1206765926936413
+answer ----> Answer -- with score: 0.48520540945374324
+retirement account ----> Retirement -- with score: 1.9312814942921048
+span ----> Span (architecture) -- with score: -0.9318482069898237
+average ----> Average -- with score: 0.13799649917473444
+accounts ----> Account (accountancy) -- with score: 0.691651504992246
+guarantee ----> Surety -- with score: 0.8933883793042859
+track ----> Track and field -- with score: -0.05441596989035624
+roth ira ----> Roth IRA -- with score: 0.0
+credit card company ----> Credit CARD Act of 2009 -- with score: 0.0
+aren ----> Aren -- with score: -0.004140792666031388
+basic ----> BASIC -- with score: 0.24063095966246517
+americans ----> United States -- with score: 0.8256662830513567
+borrowing money ----> Leverage (finance) -- with score: 0.11486215698037106
+lets ----> Local exchange trading system -- with score: 0.2764164874574541
+internal revenue service ----> Internal Revenue Service -- with score: 1.7763061874102974
+age ----> Ageing -- with score: 0.502500469845012
+baby boomers ----> Baby boomers -- with score: 1.9052758958895666
+extra ----> Extra (acting) -- with score: -0.1555086341243589
+401(k) ----> 401(k) -- with score: 0.0
+concepts ----> Concept -- with score: 0.6614687949681728
+charge ----> Electric charge -- with score: -0.7931350471241306
+guaranteed ----> Guaranteed (Level 42 album) -- with score: -0.8620891319071882
+credit card ----> Credit card -- with score: 2.559598649867267
+interest ----> Interest -- with score: 3.3603778695396422
+employee ----> Employment -- with score: 3.318272485756498
+fail ----> Box office bomb -- with score: 0.13240224854232796
+rutger hauer ----> Rutger Hauer -- with score: 0.16346945984201586
+certified financial planner ----> Certified Financial Planner -- with score: 0.0
+retire ----> Retirement -- with score: 3.322862888144747
+united states ----> United States -- with score: 1.3782117097720261
+individual ----> Individual -- with score: 1.7204159122589866
+set ----> Set (mathematics) -- with score: -0.7016635888000635
+earned income ----> Wage -- with score: 0.9765952963976245
+habits ----> Habit -- with score: 0.3677848432335362
+views ----> View (SQL) -- with score: -1.0089973769416514
+good cause ----> Product Red -- with score: -0.05889331262583769
+credit card debt ----> Credit card debt -- with score: 1.47138557611178
+person ----> Person -- with score: 1.739889396747101
+don ----> Donington Park -- with score: -1.5711994828931226
+gen xers ----> Generation X -- with score: 0.0
+investment portfolio ----> Portfolio (finance) -- with score: 0.9965430836887713
+retired ----> Retirement -- with score: 2.679213944967458
+investments ----> Investment -- with score: 3.435866539965271
+hauer ----> Josef Matthias Hauer -- with score: -1.1856236656577395
+off-track ----> Milka Duno -- with score: 0.0
+millennials ----> Millennials -- with score: 0.0
+order ----> Order (biology) -- with score: -0.2573705742174567
+turn ----> Traversal Using Relays around NAT -- with score: -1.1964707511931383
+concern ----> Concern (business) -- with score: 0.0010622586160864422
+gen ----> General officer -- with score: -0.8238248304219009
+off track ----> Off-track betting -- with score: 0.0
+retirement fund ----> Retirement home -- with score: 0.0
+company ----> Company -- with score: 2.429867467996454
+kathy ----> Kathy Beale -- with score: -0.6040578971979762
+employees ----> Employment -- with score: 3.3358195372481014
+is ----> Fort Gay, West Virginia -- with score: -1.6515163033504392
+example ----> Example (musician) -- with score: -1.250594109952441
+time ----> Time (magazine) -- with score: 0.5676875581811675
+borrowing ----> Debt -- with score: 1.3969712000513113
+traditional ira ----> Roth IRA -- with score: 0.52691331329571
+fund ----> Mutual fund -- with score: 1.909463298899694
+types ----> Personal computer -- with score: -1.9198036607582545
+people ----> People -- with score: 0.10044062447432878
+difference ----> Human Development Index -- with score: -1.5653264558155295
+save ----> Saving -- with score: -0.17018934222279647
+clients ----> Consumer -- with score: 0.6697393097369502
+work ----> Employment -- with score: 0.19816890872867887
+change ----> Social change -- with score: -1.052535668008487
+Correcting name = credit card company -- with new name = credit card companies cands = 13897446
+Correcting name = retirement fund -- with new name = retirement housing cands = 9124466
+Correcting name = off-track -- with new name = off-track... cands = 16465265
+ =============== Start Entity Linking pipeline ============
+Correcting name = retirement fund -- with new name = retirement housing cands = 9124466
+Correcting name = credit card company -- with new name = credit card companies cands = 13897446
+Correcting name = off-track -- with new name = off-track... cands = 16465265
+
+ ========= RESULTS ARGMAX ===========
+faq ----> FAQ -- with score: -0.040019318891874656
+here ----> Tramadol -- with score: -2.62819469290332
+debt ----> Debt -- with score: -0.15665703917992038
+invest ----> Investment -- with score: -0.5284303646948051
+retirement ----> Retirement -- with score: -0.13688237759790978
+tax ----> Tax -- with score: -0.1297471930232358
+retirement ----> Retirement -- with score: -0.13688237759790978
+save ----> Save (baseball) -- with score: -0.2496081331230541
+taxes ----> Tax -- with score: -0.14373017028195995
+down ----> Down GAA -- with score: -1.3228766214443508
+irish singles chart ----> Irish Singles Chart -- with score: -0.01016771606540387
+savings ----> Saving -- with score: -0.11263608456362934
+irs ----> Internal Revenue Service -- with score: -0.14062824332451454
+questions ----> Question -- with score: -0.6183871053508361
+taxed ----> Tax -- with score: -0.11457276002613519
+interest ----> Interest -- with score: -0.18504326407626118
+answer ----> Answer -- with score: -1.1911335308310362
+retirement account ----> Retirement -- with score: -0.008733679968754553
+lot ----> Lot (department) -- with score: -1.0367997517666918
+span ----> Span (architecture) -- with score: -1.130137089184514
+average ----> Average -- with score: -1.0195185492811754
+accounts ----> Account (accountancy) -- with score: -1.1563123209757165
+guarantee ----> Surety -- with score: -0.6754476034605444
+track ----> Track and field -- with score: -0.6147187578938605
+roth ira ----> Roth IRA -- with score: 0.0
+credit card company ----> Credit CARD Act of 2009 -- with score: 0.0
+aren ----> Aren -- with score: -0.004140792666031388
+types ----> Data type -- with score: -2.631578835973581
+basic ----> BASIC -- with score: -0.2622218920685129
+americans ----> United States -- with score: -0.6111064145196344
+borrowing money ----> Leverage (finance) -- with score: -0.01739174271186922
+traditional ira ----> Traditional IRA -- with score: -0.2726798171372931
+difference ----> Difference feminism -- with score: -1.9739821678339997
+lets ----> Local exchange trading system -- with score: -6.673340254329604E-4
+internal revenue service ----> Internal Revenue Service -- with score: -9.845212193799627E-4
+age ----> Ageing -- with score: -1.0588097755271388
+baby boomers ----> Baby boomers -- with score: -0.019556178793867358
+extra ----> Extra (acting) -- with score: -0.9320802689371093
+401(k) ----> 401(k) -- with score: 0.0
+concepts ----> Concept -- with score: -0.6543710730604797
+charge ----> Electric charge -- with score: -0.9240857046368596
+guaranteed ----> Guaranteed (Level 42 album) -- with score: -0.885200144804124
+credit card ----> Credit card -- with score: -0.009769732821782338
+employee ----> Employment -- with score: -0.005824552323936756
+borrowing ----> Loanword -- with score: -0.22773656780915483
+fail ----> Box office bomb -- with score: -0.3209788463648498
+rutger hauer ----> Rutger Hauer -- with score: -0.0028161099996420248
+clients ----> Client (computing) -- with score: -0.570412696966066
+certified financial planner ----> Certified Financial Planner -- with score: 0.0
+retire ----> Retirement -- with score: -0.15817650604612069
+fund ----> Fund accounting -- with score: -1.1449333587139647
+united states ----> United States -- with score: -0.049143984032785484
+individual ----> Individual -- with score: -0.5989674270293994
+set ----> Set (mathematics) -- with score: -1.1912686324438175
+earned income ----> Wage -- with score: -0.04987183004017298
+habits ----> Habit -- with score: -0.7391422723976806
+views ----> View (SQL) -- with score: -1.1616000211774895
+change ----> Change (band) -- with score: -2.3451506091895715
+good cause ----> Product Red -- with score: -0.30691343437966845
+credit card debt ----> Credit card debt -- with score: -0.003076333900872558
+person ----> Person -- with score: -0.5550620460044275
+don ----> Donington Park -- with score: -1.821834991423953
+people ----> People (magazine) -- with score: -0.9570197458212191
+gen xers ----> Generation X -- with score: 0.0
+investment portfolio ----> Portfolio (finance) -- with score: -0.0018674141747954732
+work ----> Copyright status of work by the U.S. government -- with score: -0.6095976440374669
+retired ----> Retirement -- with score: -0.8018254492234096
+investments ----> Investment -- with score: -0.06158752109279363
+hauer ----> Josef Matthias Hauer -- with score: -1.1856236656577395
+off-track ----> Milka Duno -- with score: 0.0
+millennials ----> Millennials -- with score: 0.0
+order ----> Order (biology) -- with score: -0.38296572652946503
+turn ----> Traversal Using Relays around NAT -- with score: -1.1964707511931383
+concern ----> Concern (business) -- with score: -0.7611817386050852
+gen ----> General officer -- with score: -1.3318061758358208
+off track ----> Off-track betting -- with score: 0.0
+retirement fund ----> Retirement home -- with score: 0.0
+company ----> Company -- with score: -0.47133594298059944
+kathy ----> Kathy Beale -- with score: -0.6804773278188936
+employees ----> Employment -- with score: -0.012739025777429714
+is ----> Fort Gay, West Virginia -- with score: -1.7769398564769097
+example ----> Example (musician) -- with score: -1.3405860733734571
+time ----> Time (magazine) -- with score: -0.5237287012835311

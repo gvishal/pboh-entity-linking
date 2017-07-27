@@ -21,7 +21,7 @@ object AQUAINT_MSNBC_ACE04 {
       "ACE04" -> "ace2004/RawTexts/")
       
   def loadDataset(name : String, allIndexesBox : AllIndexesBox) : Array[(String, Array[(String,Int, Array[Int])])] = {
-    val baseDir =  "/media/hofmann-scratch/Octavian/entity_linking/marinah/deos14_ualberta_experiments/"
+    val baseDir =  "/data/pboh-data/pboh_data/gerbil_msnbc/deos14_ualberta_experiments/"
     val rootFileMentions = baseDir + rootFilesMentions.get(name).get
     val rootDirContext = baseDir + rootDirsContexts.get(name).get
      

@@ -30,6 +30,12 @@
       <version>1.8</version>
     </dependency>
 
+    <dependency>
+      <groupId>org.rocksdb</groupId>
+      <artifactId>rocksdbjni</artifactId>
+      <version>5.5.1</version>
+    </dependency>
+
     <!-- https://mvnrepository.com/artifact/net.sf.trove4j/trove4j -->
     <dependency>
       <groupId>net.sf.trove4j</groupId>

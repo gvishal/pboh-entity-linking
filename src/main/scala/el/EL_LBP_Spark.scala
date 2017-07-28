@@ -99,6 +99,18 @@ object EL_LBP_Spark  {
       console.consoleJustOutput(max_product)
 
 
+    } else if (program == "batchProcessCsvNgrams") {
+      System.err.println("Program : batch process csv ngrams Entity Linking")      
+      if (tailArgs.size < 2) {
+        System.err.println(" [ERROR] Please specify a parameter either 'max-product' or 'sum-product'.")
+        System.exit(1)
+      }
+      val max_product = if (tailArgs(1) == "max-product") true else false
+
+      val console = new ConsoleEntityLinking
+      console.batchProcessCsvNgrams("/home/vishal.g/TAGME-Reproducibility/results/csv/surface_forms.csv", max_product)
+
+
     } else if (program == "testPBOHOnAllDatasets") {
       System.err.println(" Program : test on all datasets")
       if (tailArgs.size < 1) {

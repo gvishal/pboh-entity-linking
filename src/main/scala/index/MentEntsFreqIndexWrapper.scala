@@ -54,7 +54,7 @@ class MentEntsFreqIndexWrapper(
         candidates.removeEntity(sorted_cand_list(i))
       }
         
-      assert(sorted_cand_list(0) == candidates.getBestIndependentEntity(m, rho_funct))
+      // assert(sorted_cand_list(0) == candidates.getBestIndependentEntity(m, rho_funct))
       
       cache.put(m, candidates)
       candidates

@@ -63,7 +63,7 @@ class AllIndexesBox(whichIndexes : String)  extends java.io.Serializable {
     // most time consuming
     wordEntityProbsIndex = new WordEntityProbsIndex
     // only load it once, subsequently reuse the old index.
-    wordEntityProbsIndex.load(wordEntityProbsIndexPath, wordFreqDict);
+    // wordEntityProbsIndex.load(wordEntityProbsIndexPath, wordFreqDict);
   }
   
   if (!whichIndexes.contains("mentionEntsFreqIndex") && whichIndexes.contains("entIDToNameIndex")) {

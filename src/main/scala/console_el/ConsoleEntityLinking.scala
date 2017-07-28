@@ -22,6 +22,13 @@ import gnu.trove.map.hash.TIntObjectHashMap
 import gnu.trove.set.hash.TIntHashSet
 
 
+import java.io.{BufferedWriter, FileWriter}
+import scala.collection.JavaConversions._
+import scala.collection.mutable.ListBuffer
+import scala.util.Random
+import au.com.bytecode.opencsv.CSVWriter
+
+
 /*
  * Allows as input a set of mentions to be disambiguated and a set of entities 
  * that might co-occur in the same doc with the given mentions.
@@ -168,6 +175,53 @@ class ConsoleEntityLinking {
         }        
       }
     }
+  }
+
+  def batchProcessCsvNgrams(path : String, max_product: Boolean) = {
+    val lines = scala.io.Source.fromFile(path).getLines
+
+    val outputFile = new BufferedWriter(new FileWriter("forbes_pboh_raw.csv")) //replace the path with the desired path and filename with the desired filename
+    val csvWriter = new CSVWriter(outputFile)
+
+    var listOfRecords = new ListBuffer[Array[String]]()
+    
+
+    while (lines.hasNext) {
+      val url = lines.next
+      val line_mentions = lines.next
+
+      println(url)
+
+      val csvFields = Array(url)
+      listOfRecords += csvFields
+
+      var loopy = new ArrayBuffer[String]
+
+      val mapLoopy = EntityLinkingAPI(line_mentions, true, null, max_product)        
+
+      println("\n ========= RESULTS Loopy =========== ")
+      for (a <- mapLoopy) {
+        println(a.getMention.getNgram + ":::" + allIndexesBox.entIDToNameIndex.get(a.getEntity) + ":::" + a.getScore)  
+        loopy += a.getMention.getNgram + ":::" + allIndexesBox.entIDToNameIndex.get(a.getEntity) + ":::" + a.getScore.toString
+      }
+
+      listOfRecords += loopy.toArray
+
+      var argmax = new ArrayBuffer[String]
+
+      val mapARGMAX = EntityLinkingAPI(line_mentions, false, null, max_product)        
+
+      println("\n ========= RESULTS ARGMAX =========== ")
+      for (a <- mapARGMAX) {
+        println(a.getMention.getNgram + ":::" + allIndexesBox.entIDToNameIndex.get(a.getEntity) + ":::" + a.getScore)          
+        argmax += a.getMention.getNgram + ":::" + allIndexesBox.entIDToNameIndex.get(a.getEntity) + ":::" + a.getScore.toString
+      }     
+
+      listOfRecords += argmax.toArray
+    }
+
+    csvWriter.writeAll(listOfRecords.toList)
+    outputFile.close()
   }
   
   def consoleCompareWithArgmax(max_product : Boolean) = {

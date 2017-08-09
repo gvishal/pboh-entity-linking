@@ -178,50 +178,70 @@ class ConsoleEntityLinking {
   }
 
   def batchProcessCsvNgrams(path : String, max_product: Boolean) = {
-    val lines = scala.io.Source.fromFile(path).getLines
+    var file_no = 0
 
-    val outputFile = new BufferedWriter(new FileWriter("forbes_pboh_raw.csv")) //replace the path with the desired path and filename with the desired filename
-    val csvWriter = new CSVWriter(outputFile)
+    for(file_no <- 4 to 8){
+      val path = "/home/vishal.g/TAGME-Reproducibility/results/csv/surface_forms_" + file_no.toString + ".csv"
 
-    var listOfRecords = new ListBuffer[Array[String]]()
-    
+      println(path)
 
-    while (lines.hasNext) {
-      val url = lines.next
-      val line_mentions = lines.next
+      val lines = scala.io.Source.fromFile(path).getLines
 
-      println(url)
+      val outputFile = new BufferedWriter(new FileWriter("forbes_pboh_raw_" + file_no.toString +  ".csv")) //replace the path with the desired path and filename with the desired filename
+      val csvWriter = new CSVWriter(outputFile)
 
-      val csvFields = Array(url)
-      listOfRecords += csvFields
+      var listOfRecords = new ListBuffer[Array[String]]()
+      
 
-      var loopy = new ArrayBuffer[String]
+      while (lines.hasNext) {
+        // try{
+          val url = lines.next
+          val line_mentions = lines.next
 
-      val mapLoopy = EntityLinkingAPI(line_mentions, true, null, max_product)        
+          println(url)
 
-      println("\n ========= RESULTS Loopy =========== ")
-      for (a <- mapLoopy) {
-        println(a.getMention.getNgram + ":::" + allIndexesBox.entIDToNameIndex.get(a.getEntity) + ":::" + a.getScore)  
-        loopy += a.getMention.getNgram + ":::" + allIndexesBox.entIDToNameIndex.get(a.getEntity) + ":::" + a.getScore.toString
+          val csvFields = Array(url)
+          listOfRecords += csvFields
+
+          var loopy = new ArrayBuffer[String]
+
+          val mapLoopy = EntityLinkingAPI(line_mentions, true, null, max_product)        
+
+          // println("\n ========= RESULTS Loopy =========== ")
+          for (a <- mapLoopy) {
+            // println(a.getMention.getNgram + ":::" + allIndexesBox.entIDToNameIndex.get(a.getEntity) + ":::" + a.getScore)  
+            loopy += a.getMention.getNgram + ":::" + allIndexesBox.entIDToNameIndex.get(a.getEntity) + ":::" + a.getScore.toString
+          }
+
+          listOfRecords += loopy.toArray
+
+          // var argmax = new ArrayBuffer[String]
+
+          // val mapARGMAX = EntityLinkingAPI(line_mentions, false, null, max_product)        
+
+          // println("\n ========= RESULTS ARGMAX =========== ")
+          // for (a <- mapARGMAX) {
+          //   println(a.getMention.getNgram + ":::" + allIndexesBox.entIDToNameIndex.get(a.getEntity) + ":::" + a.getScore)          
+          //   argmax += a.getMention.getNgram + ":::" + allIndexesBox.entIDToNameIndex.get(a.getEntity) + ":::" + a.getScore.toString
+          // }     
+
+          // listOfRecords += argmax.toArray
+        // }
+        // catch{
+        //   case unknown => println("Got this unknown exception: " + unknown)
+        // }
+        // finally{
+        //   csvWriter.writeAll(listOfRecords.toList)
+        //   outputFile.close()
+        // }
+
+        // mapLoopy = null
+        // loopy = null
       }
 
-      listOfRecords += loopy.toArray
-
-      var argmax = new ArrayBuffer[String]
-
-      val mapARGMAX = EntityLinkingAPI(line_mentions, false, null, max_product)        
-
-      println("\n ========= RESULTS ARGMAX =========== ")
-      for (a <- mapARGMAX) {
-        println(a.getMention.getNgram + ":::" + allIndexesBox.entIDToNameIndex.get(a.getEntity) + ":::" + a.getScore)          
-        argmax += a.getMention.getNgram + ":::" + allIndexesBox.entIDToNameIndex.get(a.getEntity) + ":::" + a.getScore.toString
-      }     
-
-      listOfRecords += argmax.toArray
+      csvWriter.writeAll(listOfRecords.toList)
+      outputFile.close()
     }
-
-    csvWriter.writeAll(listOfRecords.toList)
-    outputFile.close()
   }
   
   def consoleCompareWithArgmax(max_product : Boolean) = {

@@ -170,7 +170,7 @@ class MentionEntitiesFrequencyIndex extends java.io.Serializable {
    
       if (nameScore >= 0.5) {
         expensive = true
-        println("Correcting name = " + m + " -- with new name = " + name + " cands = " + map.get(name).toString)
+        // println("Correcting name = " + m + " -- with new name = " + name + " cands = " + map.get(name).toString)
         (name, listOfListsOfCand(map.get(name)).clone, expensive)
       } else {
         null

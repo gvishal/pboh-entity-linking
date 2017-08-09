@@ -1,3 +1,5 @@
 backup/*
 *.db
 target/*
+*.csv
+*.log

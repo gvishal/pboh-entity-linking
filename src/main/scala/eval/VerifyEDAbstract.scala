@@ -125,9 +125,9 @@ abstract class VerifyEDAbstract(allIndexesBox : AllIndexesBox) {
       println("Percent missing real ent from candidates index = " + percMissingGroundCandidateFromIndex);
     
       /////// TO DO : delete this when running on big data.
-      outputAnnotations("\nGood solutions:", verifier.getCorrectAnnotations.toArray, allIndexesBox.entIDToNameIndex, scorer, verifier)
-      outputAnnotations("\nFalse positives (wrong assigned):", verifier.getWrongAnnotations.toArray, allIndexesBox.entIDToNameIndex, scorer, verifier)
-      outputAnnotations("\nFalse negatives (not found):", verifier.getNotFoundAnnotations.toArray, allIndexesBox.entIDToNameIndex, scorer, verifier)
+      // outputAnnotations("\nGood solutions:", verifier.getCorrectAnnotations.toArray, allIndexesBox.entIDToNameIndex, scorer, verifier)
+      // outputAnnotations("\nFalse positives (wrong assigned):", verifier.getWrongAnnotations.toArray, allIndexesBox.entIDToNameIndex, scorer, verifier)
+      // outputAnnotations("\nFalse negatives (not found):", verifier.getNotFoundAnnotations.toArray, allIndexesBox.entIDToNameIndex, scorer, verifier)
     }
 	
     return verifier;
